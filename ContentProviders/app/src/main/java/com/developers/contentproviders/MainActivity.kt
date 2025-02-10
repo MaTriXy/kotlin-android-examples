@@ -1,13 +1,14 @@
 package com.developers.contentproviders
 
+
 import android.content.ContentValues
 import android.database.Cursor
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.app.LoaderManager
-import android.support.v4.content.CursorLoader
-import android.support.v4.content.Loader
-import android.support.v7.widget.LinearLayoutManager
+import androidx.loader.app.LoaderManager
+import androidx.loader.content.CursorLoader
+import androidx.loader.content.Loader
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.developers.contentproviders.adapter.VillainAdapter
 import com.developers.contentproviders.data.Villains
 import kotlinx.android.synthetic.main.activity_main.*
@@ -16,7 +17,7 @@ import java.util.logging.Logger
 
 class MainActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<Cursor> {
 
-    lateinit var mAdapter: VillainAdapter
+    private lateinit var mAdapter: VillainAdapter
 
     companion object {
         const val LOADER_VILLAIN = 1
@@ -51,16 +52,16 @@ class MainActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<Cursor> 
         }
     }
 
-    override fun onLoaderReset(loader: Loader<Cursor>?) {
-        when (loader?.id) {
+    override fun onLoaderReset(loader: Loader<Cursor>) {
+        when (loader.id) {
             LOADER_VILLAIN -> {
                 log.info("In RESET")
             }
         }
     }
 
-    override fun onLoadFinished(loader: Loader<Cursor>?, data: Cursor?) {
-        when (loader?.id) {
+    override fun onLoadFinished(loader: Loader<Cursor>, data: Cursor?) {
+        when (loader.id) {
             LOADER_VILLAIN -> {
                 mAdapter = VillainAdapter(applicationContext)
                 recycler_view.adapter = mAdapter

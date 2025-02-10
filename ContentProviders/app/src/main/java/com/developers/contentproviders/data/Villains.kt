@@ -1,8 +1,8 @@
 package com.developers.contentproviders.data
 
-import android.arch.persistence.room.ColumnInfo
-import android.arch.persistence.room.Entity
-import android.arch.persistence.room.PrimaryKey
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import android.content.ContentValues
 import android.provider.BaseColumns
 
@@ -27,8 +27,8 @@ data class Villains(
         const val TABLE_NAME = "villains"
         const val VILLAIN_NAME = "villain_name"
         const val VILLAIN_SERIES = "series"
-        val villainsName = listOf<String>("Joker", "DeathStroke", "Reverse Flash", "Lex Luthor", "Harley Quinn")
-        val villainsSeries = listOf<String>("Batman", "Arrow", "Flash", "Superman", "Suicide Squad")
+        val villainsName = listOf("Joker", "DeathStroke", "Reverse Flash", "Lex Luthor", "Harley Quinn")
+        val villainsSeries = listOf("Batman", "Arrow", "Flash", "Superman", "Suicide Squad")
         var villain: Villains = Villains("", "")
         fun fromContentValues(vals: ContentValues): Villains {
             if (vals.containsKey(COLUMN_ID)) {

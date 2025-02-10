@@ -2,7 +2,7 @@ package com.developers.contentproviders.adapter
 
 import android.content.Context
 import android.database.Cursor
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,12 +32,12 @@ class VillainAdapter(val context: Context) : RecyclerView.Adapter<VillainAdapter
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): MyViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.item_row, parent, false)
         return MyViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: MyViewHolder?, position: Int) {
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         if (mCursor.moveToPosition(position)) {
             holder?.bindItems(mCursor)
         }

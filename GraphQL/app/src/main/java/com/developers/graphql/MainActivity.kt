@@ -1,9 +1,9 @@
 package com.developers.graphql
 
 import android.graphics.Color
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.design.widget.Snackbar
+import com.google.android.material.snackbar.Snackbar
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.SpannableStringBuilder
@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        button_find.setOnClickListener({
+        button_find.setOnClickListener {
             progress_bar.visibility = View.VISIBLE
             val repoName = repo_name_edittext.text
             val ownerName = owner_name_edittext.text
@@ -139,7 +139,7 @@ class MainActivity : AppCompatActivity() {
                             e.printStackTrace()
                         })
             }
-        })
+        }
     }
 
     override fun onStop() {
